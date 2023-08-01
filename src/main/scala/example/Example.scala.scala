@@ -73,13 +73,17 @@ def Example(): Unit =
 
   val rootElement = div(
     div(
-      img(
-        src := dvdLogo,
-        cls := Seq("logo", "vanilla"),
-        alt := "DVD logo",
-        onClick.mapToUnit --> tickObserver,
-        styleAttr <-- boxVar.signal.map(b =>
-          s"filter: hue-rotate(${b.hue}deg); position: absolute; top: ${b.y}px; left: ${b.x}px"
+      a(
+        href := "https://github.com/windymelt/laminar-exercise",
+        target := "_blank",
+        img(
+          src := dvdLogo,
+          cls := Seq("logo", "vanilla"),
+          alt := "DVD logo",
+          onClick.mapToUnit --> tickObserver,
+          styleAttr <-- boxVar.signal.map(b =>
+            s"filter: hue-rotate(${b.hue}deg); position: absolute; top: ${b.y}px; left: ${b.x}px"
+          )
         )
       )
     )
