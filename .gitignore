@@ -29,3 +29,5 @@ project/project
 target/
 .metals
 metals.sbt
+
+laminar-dvd/
