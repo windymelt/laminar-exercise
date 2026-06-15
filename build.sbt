@@ -1,10 +1,12 @@
 import org.scalajs.linker.interface.ModuleSplitStyle
 
+ThisBuild / scalacOptions ++= Seq("-Yfuture-lazy-vals", "-java-output-version:11")
+
 lazy val example = project
   .in(file("."))
   .enablePlugins(ScalaJSPlugin) // Enable the Scala.js plugin in this project
   .settings(
-    scalaVersion := "3.3.0",
+    scalaVersion := "3.3.8",
 
     // Tell Scala.js that this is an application with a main method
     scalaJSUseMainModuleInitializer := true,
@@ -29,3 +31,4 @@ lazy val example = project
     libraryDependencies += "org.scala-js" %%% "scalajs-dom" % "2.4.0",
     libraryDependencies += "com.raquo" %%% "laminar" % "16.0.0"
   )
+
